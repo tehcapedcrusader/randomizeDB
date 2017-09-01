@@ -7,7 +7,6 @@ public class RandomizeDB
 
     public static void main(String[] args) throws Exception
     {
-        //        System.out.println("change");
         int ecount;
 
         System.out.println("fetching data from files..");
