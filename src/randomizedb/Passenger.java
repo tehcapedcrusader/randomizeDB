@@ -1,6 +1,9 @@
 package randomizedb;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Passenger
 {
@@ -35,7 +38,6 @@ public class Passenger
 
         return strb.toString();
     }
-
     void consolidate(Connection con)
     {
         try
@@ -57,7 +59,6 @@ public class Passenger
         }
     }
 }
-
 class generatePassengers
 {
     static Passenger[] parseObjects()
@@ -100,7 +101,6 @@ class generatePassengers
         }
         return plist;
     }
-
     static Passenger[] parseFromRS(ResultSet rs)
     {
         int cols = 7;

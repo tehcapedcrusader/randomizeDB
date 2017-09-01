@@ -1,8 +1,12 @@
 package randomizedb;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
+ *
  * @author Isuru Udukala
  */
 public class Ticket
@@ -19,7 +23,6 @@ public class Ticket
         this.fclass = fclass;
         this.passengerid = passengerid;
     }
-
     @Override
     public String toString()
     {
@@ -31,7 +34,6 @@ public class Ticket
         strb.append("\nPassenger ID\t: ").append(passengerid);
         return strb.toString();
     }
-
     void consolidate(Connection con)
     {
         try

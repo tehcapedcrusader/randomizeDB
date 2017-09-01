@@ -1,5 +1,4 @@
 package randomizedb;
-
 import java.sql.*;
 
 public class Account
@@ -19,7 +18,6 @@ public class Account
         passid = passengerid;
         actype = actp;
     }
-
     @Override
     public String toString()
     {
@@ -31,7 +29,6 @@ public class Account
 
         return strb.toString();
     }
-
     void consolidate(Connection con)
     {
         try
@@ -50,7 +47,6 @@ public class Account
         }
     }
 }
-
 class generateAccounts
 {
     static Passenger[] fetchPassengers(Connection con)
@@ -69,7 +65,6 @@ class generateAccounts
         }
         return paslist;
     }
-
     static String[][] generateUsernames(Passenger[] paslist)
     {
         boolean admin;
@@ -92,7 +87,6 @@ class generateAccounts
         }
         return usernames;
     }
-
     static Account[] generateCredentials(String[][] credentials)
     {
         Account[] aclist = new Account[credentials.length];

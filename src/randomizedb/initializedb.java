@@ -1,12 +1,15 @@
 package randomizedb;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class initializedb
 {
     final static String MYSQL_URL = "jdbc:mysql://localhost:3306";
     final static String ATRS_URL = "jdbc:mysql://localhost:3306/atrsdb";
-
+    
     static Connection connect(String url)
     {
         Connection con = null;
@@ -20,7 +23,6 @@ public class initializedb
         }
         return con;
     }
-
     static Connection createDatabase()
     {
         Connection con = null;

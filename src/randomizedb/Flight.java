@@ -1,11 +1,14 @@
 package randomizedb;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 /**
+ *
  * @author Isuru Udukala
  */
 public class Flight
@@ -25,7 +28,6 @@ public class Flight
         this.departure = departure;
         this.landing = landing;
     }
-
     @Override
     public String toString()
     {
@@ -37,7 +39,6 @@ public class Flight
         strb.append("\nLanding\t\t: ").append(landing);
         return strb.toString();
     }
-
     void consolidate(Connection con)
     {
         try
@@ -58,7 +59,6 @@ public class Flight
     }
 
 }
-
 class generateFlights
 {
     static Flight[] parseObjects(Connection con, int flimit)
@@ -107,7 +107,6 @@ class generateFlights
         }
         return flist;
     }
-
     static LocalDateTime getRandomDateTime(int offset)
     {
         //offset in days
@@ -151,6 +150,6 @@ class generateFlights
         {
             System.out.println("Parsing from resultSet failed. exiting with error code -6\n" + e);
         }
-        return ftemp;
+        return ftemp;        
     }
 }

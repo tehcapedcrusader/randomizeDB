@@ -1,6 +1,9 @@
 package randomizedb;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Airport
 {
@@ -16,7 +19,6 @@ public class Airport
         this.country = country;
         this.city = city;
     }
-
     @Override
     public String toString()
     {
@@ -24,11 +26,10 @@ public class Airport
         string.append("\nName\t :  ").append(name);
         string.append("\nIATA\t :  ").append(iata);
         string.append("\nCountry\t :  ").append(country);
-        string.append("\nCity\t :  ").append(city);
-
+        string.append("\nCity\t :  ").append(city);        
+        
         return string.toString();
     }
-
     void consolidate(Connection con)
     {
         try
@@ -50,7 +51,7 @@ public class Airport
 }
 
 class generateAirports
-{
+{    
     static Airport[] parseObjects(extractData airdata)
     {
         String name, iata, country, city;
@@ -67,7 +68,6 @@ class generateAirports
 
         return alist;
     }
-
     static Airport[] parseFromRS(ResultSet rs)
     {
         String name, iata, country, city;

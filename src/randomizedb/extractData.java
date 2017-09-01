@@ -1,6 +1,6 @@
 package randomizedb;
 
-public class extractData
+public class extractData 
 {
     String list;
     int cols = -1;
@@ -31,16 +31,14 @@ public class extractData
         //System.out.println(tabcount + " - " + linecount);
         return linecount * (cols - 1) == tabcount;
     }
-
     void print()
     {
         for (int i = 0; i < list.length(); i++)
         {
             if (!Character.isLetter(list.charAt(i)))
                 System.out.println(i + " - " + (int) list.charAt(i));
-        }
+        }            
     }
-
     int getrows()
     {
         int counter = 1;
@@ -59,20 +57,19 @@ public class extractData
         }
         int count = getrows();
         String array[][] = new String[count][];
-
+        
         //allocating for each String[]
         for (int i = 0; i < count; i++)
             array[i] = new String[cols];
-
+        
         //splitting and storing in airports[]
         for (int i = 0; i < count; i++)
             for (int j = 0; j < cols; j++)
                 array[i][j] = list.split("\n")[i].split("\t")[j];
-
+        
         return array;
     }
 }
-
 class randomize
 {
     static int[] array(int count, int limit)
@@ -102,5 +99,5 @@ class randomize
     {
         int random = min + (int) (Math.random() * ((max - min) + 1));
         return random;
-    }
+    }    
 }
